@@ -17,6 +17,15 @@ Console.Write("По окончанию ввода нажмите клавишу 
 string[] InArray = Console.ReadLine().Split(" ");
 string[] OutArray = new string[CountDataArray(InArray, 3)];
 
+for (int i = 0, j = 0; i < InArray.Length; i++)
+{
+    if (InArray[i].Length <= CountDataArray(InArray, 3))
+    {
+        OutArray[j] = InArray[i];
+        j++;
+    }
+}
+
 # region Подсчет данных в массиве меньше или равно заданной длины
 int CountDataArray(string[] InArray, int n)
 {
