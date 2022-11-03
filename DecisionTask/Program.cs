@@ -15,8 +15,9 @@
 Console.WriteLine("Введите строковые значения массива через пробел.");
 Console.Write("По окончанию ввода нажмите клавишу Enter: ");
 string[] InArray = Console.ReadLine().Split(" ");
-int n = CountDataArray(InArray, 3);
-string[] OutArray = new string[n];
+int n = 3;
+int OutArrayLenght = CountDataArray(InArray, n);
+string[] OutArray = new string[OutArrayLenght];
 
 for (int i = 0, j = 0; i < InArray.Length; i++)
 {
