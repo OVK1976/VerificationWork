@@ -12,3 +12,23 @@
 [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 [“Russia”, “Denmark”, “Kazan”] → [] 
 */
+Console.WriteLine("Введите строковые значения массива через пробел.");
+Console.Write("По окончанию ввода нажмите клавишу Enter: ");
+string[] InArray = Console.ReadLine().Split(" ");
+string[] OutArray = new string[CountDataArray(InArray, 3)];
+
+# region Подсчет данных в массиве меньше или равно заданной длины
+int CountDataArray(string[] InArray, int n)
+{
+    int count = 0;
+    for (int i = 0; i < InArray.Length; i++)
+    {
+        if (InArray[i].Length <= n)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+#endregion
