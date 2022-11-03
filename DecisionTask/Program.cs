@@ -15,17 +15,18 @@
 Console.WriteLine("Введите строковые значения массива через пробел.");
 Console.Write("По окончанию ввода нажмите клавишу Enter: ");
 string[] InArray = Console.ReadLine().Split(" ");
-string[] OutArray = new string[CountDataArray(InArray, 3)];
+int n = CountDataArray(InArray, 3);
+string[] OutArray = new string[n];
 
 for (int i = 0, j = 0; i < InArray.Length; i++)
 {
-    if (InArray[i].Length <= CountDataArray(InArray, 3))
+    if (InArray[i].Length <= n)
     {
         OutArray[j] = InArray[i];
         j++;
     }
 }
-
+Console.WriteLine($"[{string.Join(", ", InArray)}] -> [{string.Join(", ", OutArray)}]");
 # region Подсчет данных в массиве меньше или равно заданной длины
 int CountDataArray(string[] InArray, int n)
 {
